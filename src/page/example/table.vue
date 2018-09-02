@@ -71,9 +71,13 @@ export default {
                 type: 'post',
                 data: {}
             }).then(res => {
+                console.log("get table json data:" + res)
                 this.tableData.loading = false
+                
                 this.tableData.head = res.head
+                console.log("get tableData.head" + res.head)
                 this.tableData.body = res.body
+                console.log("get tableData.body" + res.body)
             }).catch(err => {
                 this.$message.error(`获取数据失败，失败码：${err.response.status}`)
             })

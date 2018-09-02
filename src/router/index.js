@@ -8,7 +8,7 @@ import staticRoute from './staticRoute'
 import whiteList from './whiteList'
 import Auth from '@/util/auth'
 
-// 获取permissionList权限列表，用于判断用户要跳转的页面是否在权限列表中
+// 获取permissionList权限列表，并判断用户要跳转的页面是否在权限列表中
 var permissionList = []
 function initRoute (router) {
     return new Promise((resolve) => {
@@ -20,7 +20,8 @@ function initRoute (router) {
             store.dispatch('auth/getNavList').then(() => {
 
                 store.dispatch('auth/getPermissionList').then((res) => {
-                    console.log("权限列表生成完毕")
+                    console.log("权限列表生成完毕：")
+                    console.log(res)
                     permissionList = res
                     res.forEach( function (v) {
                         let routeItem = router.match(v.path)
@@ -54,6 +55,7 @@ router.beforeEach((to, from, next) => {
   // 判断用户是否处于登录状态
   // debugger
   if (Auth.isLogin()) {
+    // 假如已经处于登录状态
     if(to.path === '/login') {
       console.log("处于登录状态直接跳转home页面")
       next({path: '/home', replace: true})
@@ -81,8 +83,8 @@ router.beforeEach((to, from, next) => {
       })
     }
   } else {
-    // 第一次登录，跳转到登录页面
-    // 假如是免登陆页面，直接进入
+    // 假如是第一次登录，跳转到登录页面
+    // 假如是请求免登陆页面，直接进入
     if (whiteList.indexOf(to.path) >= 0) {
       console.log("进入一个白名单页面");
       next()

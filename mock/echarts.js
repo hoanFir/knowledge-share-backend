@@ -6,6 +6,7 @@
 // import Mock from 'mockjs'
 
 // var data = Mock.mock({
+       // 'name|count': string：通过重复string生成一个字符串，重复次数为count
 //     "data|7": [
 //         '@natural(60, 100)'
 //     ]

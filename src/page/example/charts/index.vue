@@ -30,6 +30,7 @@ export default {
                 url: '/charts',
                 method: 'get',
             }).then(res => {
+                console.log("get charts json data" + res)
                 this.chartData = res
             }).catch(err => {
                 console.warn(`获取数据失败。${err}`)

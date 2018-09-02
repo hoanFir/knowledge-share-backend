@@ -39,9 +39,10 @@
                 <span :class="{cur: theme=='theme-dark'}" @click="changeTheme('theme-dark')">深</span>
             </div>
             
-            <div class="tip">
-                <p>{{$t('global.loginTip')}}</p>
-            </div>
+        </div>
+        
+        <div class="footer">
+            @2018-微言团队
         </div>
     </div>
 </template>

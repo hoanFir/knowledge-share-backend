@@ -7,7 +7,6 @@ export default {
         login: 'Login',
         captcha: 'Captcha',
         forgetPassword: 'Forget Password?',
-        loginTip: 'The login result is random. Just fill in the captcha',
         editpassword: 'Edit Password',
         logout: 'Logout',
         errMsg: {
