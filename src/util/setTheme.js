@@ -21,7 +21,7 @@ function getFileList(cssList, name){
 
 /**
  * 设置主题文件
- * @param {String} fileName 主题名
+ * @param {String} fileName 主题名default or dark
  */
 function setTheme(fileName){
     // 获取head中的外链样式表组

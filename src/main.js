@@ -26,6 +26,7 @@ Vue.use(ElementUI, {
     i18n: (key, value) => i18n.t(key, value)
 })
 
+// 默认为true，设置为false防止出现生产提示
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

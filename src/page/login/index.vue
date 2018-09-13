@@ -134,8 +134,13 @@ export default {
         },
 
         changeTheme (val) {
-            if(val == this.lang) 
+            console.log(val)
+            console.log(this.theme)
+            // TODO：点击修改主题
+            if(val == this.theme)
+                // 设置主题文件
                 return setTheme(val)
+            // 将修改后的主题状态存储到store中
             this.$store.commit("setThemeColor", val)
         },
 
