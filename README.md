@@ -1,5 +1,3 @@
-A backend management system 社区知识分享
-- mockjs
+社区知识分享运营平台/后台管理
 - vue
-- vue-cli
-- Element UI
+- element ui
